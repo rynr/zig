@@ -28,6 +28,8 @@ Installation
 Put the [zig](https://github.com/rynr/zig/raw/master/zig)-binary somewhere
 where you can execute it.
 
+    curl https://github.com/rynr/zig/raw/master/zig > zig && chmod u+x zig
+
 Limitations
 -----------
 
@@ -35,6 +37,8 @@ Limitations
    are possible, but will follow.
  - Currently all files are extracted or compressed. A check on the timestamp
    will follow.
+ - The current implementation uses bash functions, so it's bound to a unix-like
+   system. You can use [cygwin](https://www.cygwin.com/) on windows.
 
 Links
 -----
