@@ -12,6 +12,11 @@ zig_usage() {
   echo "  uninstall  remove all configuration of zig"
 }
 
+zig_set_ext() {
+  zig_ext=`git config --local zig.ext`
+  zig_ext=${zig_ext//[^a-zA-Z0-9]/}
+}
+
 zig_init() {
   echo "Please enter the extension that you want zig to handle."
   echo "(only characters and numbers allowed, for example sketch, xslx, …)"
@@ -34,11 +39,35 @@ zig_init() {
   fi
 }
 
-zig_uninstall() {
-  zig_ext=`git config --local zig.ext`
-  zig_ext=${zig_ext//[^a-zA-Z0-9]/}
+zig_zip() {
+  zig_set_ext
   if [ -z "$zig_ext" ]; then
     echo "No configuration for zig present .. exiting"
+    exit 1
+  else
+    find `git rev-parse --show-toplevel` \
+      -type d -name \*.$zig_ext.extract \
+      -exec sh -c 'zip $(dirname {})/$(basename {} .extract) {}' \;
+  fi
+}
+
+zig_unzip() {
+  zig_set_ext
+  if [ -z "$zig_ext" ]; then
+    echo "No configuration for zig present .. exiting"
+    exit 1
+  else
+    find `git rev-parse --show-toplevel` \
+      -type d -name \*.$zig_ext \
+      -exec sh -c 'unzip {} $(dirname {})/$(basename {} .extract)' \;
+  fi
+}
+
+zig_uninstall() {
+  zig_set_ext
+  if [ -z "$zig_ext" ]; then
+    echo "No configuration for zig present .. exiting"
+    exit 1
   else
     git config --local --unset-all zig
     if [ $? -eq 0 ]; then
