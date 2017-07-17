@@ -37,7 +37,7 @@ like this.
 Installation
 ------------
 
-zig is yet only an idea described within the [Usage](#Usage)-section.  
+zig is yet only an idea described within the [Usage](#usage)-section.  
 Depending on the solution made, the installation will look like.  
 `zig` will probably be a simple bash script, so you could just download it and
 execute it directly.
