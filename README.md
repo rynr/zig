@@ -25,10 +25,8 @@ like this.
 Installation
 ------------
 
-zig is yet only an idea described within the [Usage](#usage)-section.  
-Depending on the solution made, the installation will look like.  
-`zig` will probably be a simple bash script, so you could just download it and
-execute it directly.
+Put the [zig](https://github.com/rynr/zig/raw/master/zig)-binary somewhere
+where you can execute it.
 
 Limitations
 -----------
