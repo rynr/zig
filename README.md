@@ -1,7 +1,7 @@
 zig
 ===
 
-Store zip-based files in git.
+Store, merge, diff and easily handle zip-based binary files in git.
 
 Usage
 -----
