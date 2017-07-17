@@ -6,13 +6,13 @@ Store zip-based files in git.
 Usage
 -----
 
-This example is about a repository of [sketch](https://www.sketchapp.com/)
-files. Those files are binary type, actually they do contain json-files packed
-as zip. Git is not deigned to handle binary files, so wouldn't it be great if
-you could just check them in as multiple json files?
+Git is not good to store binary files. Many binary files are zipped files with
+ascii content (like json or xml). This ascii content fitls well to git. So
+wouldn't it be great if you could with the binary files and checkin the ascii
+ones?
 
-This project is about a possible simple solution that could be used. It works
-like this.
+This project tries to find a feasible and simple solution that could be used,
+it currently works like this.
 
  - `zig init` initializes a git repository by asking for a filename extension
    and adding it to the git configuration.
