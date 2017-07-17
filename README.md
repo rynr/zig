@@ -7,7 +7,7 @@ Usage
 -----
 
 Git is not good to store binary files. Many binary files are zipped files with
-ascii content (like json or xml). This ascii content fitls well to git. So
+ascii content (like json or xml). This ascii content fits well to git. So
 wouldn't it be great if you could with the binary files and checkin the ascii
 ones?
 
