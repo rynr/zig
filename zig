@@ -46,8 +46,8 @@ zig_zip() {
     exit 1
   else
     find `git rev-parse --show-toplevel` \
-      -type d -name \*.$zig_ext.extract \
-      -exec sh -c 'zip $(dirname {})/$(basename {} .extract) {}' \;
+      -type d -name \*.$zig_ext.zig \
+      -exec sh -c 'zip $(dirname {})/$(basename {} .zig) {}' \;
   fi
 }
 
@@ -59,7 +59,7 @@ zig_unzip() {
   else
     find `git rev-parse --show-toplevel` \
       -type d -name \*.$zig_ext \
-      -exec sh -c 'unzip {} $(dirname {})/$(basename {} .extract)' \;
+      -exec sh -c 'unzip {} $(dirname {})/$(basename {} .zig)' \;
   fi
 }
 
